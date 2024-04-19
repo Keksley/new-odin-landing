@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/slim-select@latest/dist/slimselect.min.js"></script>
+    <link href="https://unpkg.com/slim-select@latest/dist/slimselect.css" rel="stylesheet"></link>
+    <link rel="stylesheet" href="./style.css">
+    <title>LMS Odin</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__content">
+            <a href="/">
+                <img src="./img/odin-logo.svg" alt="Odin logo">
+            </a>
+            <div class="header__controls">
+                <button class="header__add-organisation btn btn--white">Подключить организацию</button>
+                <a class="header__login link" target="_blank" rel="noopener noreferrer" href="https://odin.study">Войти в систему</a>
+                <select class="header__lang select select--lang" name="lang" id="lang">
+                    <option value="ru">Ru</option>
+                    <option value="en">En</option>
+                </select>
+            </div>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero__container container">
+            <h1 style="display: none;">LMS Odin</h1>
+            <h2 class="hero__title">Комплексная платформа для обучения онлайн</h2>
+            <img src="./img/odin-lms.svg" alt="Odin LMS" class="hero__odin-lms">
+            <p class="hero__subtitle subtitle">Привлекайте больше студентов, увеличивайте вовлеченность в обучение и повышайте прибыль</p>
+            <div class="hero__offer">
+                <button class="hero__video play-btn">
+                    <svg class="play-btn__image" width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="33" cy="33" r="32.5" stroke="#3052D8"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M32.9999 59.5609C47.6692 59.5609 59.5609 47.6692 59.5609 32.9999C59.5609 18.3307 47.6692 6.43896 32.9999 6.43896C18.3307 6.43896 6.43896 18.3307 6.43896 32.9999C6.43896 47.6692 18.3307 59.5609 32.9999 59.5609ZM25.7561 42.3682V23.632C25.7561 22.0823 27.4425 21.1214 28.7757 21.9115L44.5843 31.2795C45.8915 32.0542 45.8915 33.9461 44.5843 34.7207L28.7757 44.0888C27.4425 44.8788 25.7561 43.9179 25.7561 42.3682Z" fill="#3052D8"/>
+                        <circle cx="33" cy="33" r="23.5" stroke="#3052D8"/>
+                    </svg>
+                    <span class="play-btn__label">Смотреть видео о платформе</span>
+                </button>
+                <div class="hero__horisontal-line"></div>
+                <button class="hero__btn btn btn--white">Оставить заявку</button>
+            </div>
+            <div class="hero__counters">
+                <div class="hero__card card">
+                    <div class="hero__number">72%</div>
+                    <div class="hero__number-label">студентов доходят до конца обучения</div>
+                </div>
+                <div class="hero__card card">
+                    <div class="hero__number">10 000+</div>
+                    <div class="hero__number-label">успешных программ на платформе</div>
+                </div>
+                <div class="hero__card card">
+                    <div class="hero__number">380 000+</div>
+                    <div class="hero__number-label">пользователей</div>
+                </div>
+                <div class="hero__card card">
+                    <div class="hero__number">1000+</div>
+                    <div class="hero__number-label">организаций</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="partners container">
+        <h2 class="partners__title title mb-title">С кем мы работаем</h2>
+        <div class="partners__list">
+            <div class="partners__partner card">
+                <div class="partners__image"></div>
+                <span class="partners__description">Федеральные проекты «Содействие занятости» и «Код будущего»</span>
+            </div>
+            <div class="partners__partner card">
+                <div class="partners__image"></div>
+                <span class="partners__description">Организации дополнительного профессионального образования (ДПО)</span>
+            </div>
+            <div class="partners__partner card">
+                <div class="partners__image"></div>
+                <span class="partners__description">Вузы и колледжи</span>
+            </div>
+            <div class="partners__partner card">
+                <div class="partners__image"></div>
+                <span class="partners__description">Иные организации и ИП, оказывающие услуги в сфере образования и независимой оценки квалификации</span>
+            </div>
+        </div>
+    </section>
+    <section class="help container">
+        <h2 class="help__title title mb-title">С чем мы помогаем</h2>
+        <h3 class="help__subtitle subtitle">Наша миссия — превратить дистанционное образование в удобный и понятный процесс c помощью Odin</h3>
+        <div class="help__list">
+            <div class="help__card card">
+                <div class="help__card-presentation">
+                    <div class="help__card-icon"></div>
+                    <div class="help__card-title"> 
+                        Трудоемкий c6op аналитики и контроль статусов обучения
+                    </div>
+                </div>
+                <div class="help__card-details">
+                    Собирайте качественный цифровой след: статусы прогресса, конвертация баллов
+                    за тесты в оценки, настройка аналитики
+                    под любой запрос.
+                </div>
+            </div>
+            <div class="help__card card">
+                <div class="help__card-presentation">
+                    <div class="help__card-icon"></div>
+                    <div class="help__card-title"> 
+                        Сложно привлекатьстудентов на курсы
+                    </div>
+                </div>
+                <div class="help__card-details">
+                    Удерживайте фокус студентов на обучении: разные форматы материалов и заданий, удобный интерфейс, подробная обратная связь.
+                </div>
+            </div>
+            <div class="help__card card">
+                <div class="help__card-presentation">
+                    <div class="help__card-icon"></div>
+                    <div class="help__card-title"> 
+                        Низкая вовлеченность и доходимость студентов 
+                        до конца обучения
+                    </div>
+                </div>
+                <div class="help__card-details">
+                    Предоставляйте комфортное пространство 
+                    для учебы: гибкое расписание, обучение в любом месте с мобильным приложением, рассылки с напоминаниями о важных активностях.
+                </div>
+            </div>
+            <div class="help__card card">
+                <div class="help__card-presentation">
+                    <div class="help__card-icon"></div>
+                    <div class="help__card-title"> 
+                        Учебные программыне окупаются
+                    </div>
+                </div>
+                <div class="help__card-details">
+                    Обучайте неограниченное число студентовна платформе. Мы гарантируем стабильную работу для 100 студентов на одном звонке. 
+                    Такой формат выгоднее обучения на других платформах.
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="enviroment has-bg">
+        <div class="enviroment__content container">
+            <h2 class="enviroment__title title mb-title">
+                Организуйте учебный процесс в едином пространстве
+            </h2>
+            <h3 class="enviroment__subtitle subtitle">
+                Все нужные инструменты без дополнительных расходов
+            </h3>
+            <div class="enviroment__cards">
+                <div class="enviroment__card card">
+                    <div class="enviroment__card-image">
+                        <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M35 49V56M24.5 59.5H45.5M14 49H56C59.866 49 63 45.866 63 42V17.5C63 13.634 59.866 10.5 56 10.5H14C10.134 10.5 7 13.634 7 17.5V42C7 45.866 10.134 49 14 49Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                            
+                    </div>
+                    <div class="enviroment__card-title">Удобное пространство для учебы:</div>
+                    <ul class="enviroment__list">
+                        <li>
+                            система напоминаний о лекциях, занятиях и сроках 
+                        </li>
+                        <li>
+                            учеба по 2 часа в день даже с телефона
+                        </li>
+                        <li>
+                            статусы обучения для отслеживания прогресса
+                        </li>
+                    </ul>
+                </div>
+                <div class="enviroment__card card">
+                    <div class="enviroment__card-image">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M63.3333 34.9999V19.9999C63.3333 16.318 60.3486 13.3333 56.6667 13.3333H16.6667C12.9848 13.3333 10 16.318 10 19.9999V46.0869C10 49.7688 12.9848 52.7535 16.6667 52.7535H21.8841V66.6666L35.7971 52.7535H36.6667M53.8768 61.3043L62.5725 69.9999V61.3043H63.3333C67.0152 61.3043 70 58.3195 70 54.6376V43.3333C70 39.6514 67.0152 36.6666 63.3333 36.6666H43.3333C39.6514 36.6666 36.6667 39.6514 36.6667 43.3333V54.6376C36.6667 58.3195 39.6514 61.3043 43.3333 61.3043H53.8768Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                                                       
+                    </div>
+                    <div class="enviroment__card-title">Общение в режиме реального времени:</div>
+                    <ul class="enviroment__list">
+                        <li>
+                            чаты с преподавателями
+                        </li>
+                        <li>
+                            обратная связь по заданиям 
+                        </li>
+                        <li>
+                            связь с администраторами платформы
+                        </li>
+                    </ul>
+                </div>
+                <div class="enviroment__card card">
+                    <div class="enviroment__card-image">
+                        <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.7495 15.5442V10.2942C15.7495 8.36119 17.3165 6.79419 19.2495 6.79419H52.4995C54.4325 6.79419 55.9995 8.36119 55.9995 10.2942V24.2942M7.0022 56.2054L7.00246 29.5929C7.00248 26.9272 7.00149 23.1305 7.00064 20.3814C7.00004 18.4479 8.56727 16.8823 10.5008 16.8823H27.1789L35.2436 25.4971H59.4994C61.4324 25.4971 62.9994 27.0642 62.9994 28.9972L62.9985 56.2058C62.9984 60.0717 59.8644 63.2056 55.9985 63.2056L14.0022 63.2055C10.1362 63.2055 7.00216 60.0714 7.0022 56.2054Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                                                                                  
+                    </div>
+                    <div class="enviroment__card-title">Разный тип контента:</div>
+                    <ul class="enviroment__list">
+                        <li>
+                            лекции спикеров
+                        </li>
+                        <li>
+                            видео по теме занятий
+                        </li>
+                        <li>
+                            понятные презентации с примерами
+                        </li>
+                        <li>
+                            тесты по пройденному материалу
+                        </li>
+                    </ul>
+                </div>
+                <div class="enviroment__card card">
+                    <div class="enviroment__card-image">
+                        <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M43.7505 7V17.5C43.7505 19.433 45.3175 21 47.2505 21H57.7505M24.5005 52.5V38.5M35.0005 52.5L35.0005 24.5M45.5005 52.5V38.5M52.5005 12.25C50.9428 10.8562 49.3264 9.20319 48.3059 8.12956C47.6269 7.41514 46.6887 7 45.703 7H19.2497C15.3837 7 12.2497 10.134 12.2497 14L12.2495 55.9998C12.2494 59.8658 15.3834 62.9998 19.2494 62.9998L50.7496 63C54.6155 63 57.7495 59.8661 57.7496 56.0001L57.7505 18.8937C57.7505 17.9987 57.4091 17.1384 56.788 16.4941C55.6394 15.3027 53.7214 13.3423 52.5005 12.25Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                                                                                  
+                    </div>
+                    <div class="enviroment__card-title">Подробная аналитика под любой запрос:</div>
+                    <ul class="enviroment__list">
+                        <li>
+                            вовлеченность слушателей 
+                        </li>
+                        <li>
+                            успеваемость учеников
+                        </li>
+                        <li>
+                            обратная связь от студентов
+                        </li>
+                    </ul>
+                </div>
+                <div class="enviroment__card card">
+                    <div class="enviroment__card-image">
+                        <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.8272 32.6C13.6025 37.9273 16.27 42.7974 20.3416 46.3193C24.4131 49.8411 29.6166 51.7794 35 51.7794M35 51.7794C40.3834 51.7794 45.5869 49.8411 49.6585 46.3193C53.73 42.7974 56.3975 37.9273 57.1728 32.6M35 51.7794V63M35.0032 7C32.4571 7 30.0153 8.01143 28.215 9.81177C26.4146 11.6121 25.4032 14.0539 25.4032 16.6V29.4C25.4032 31.9461 26.4146 34.3879 28.215 36.1882C30.0153 37.9886 32.4571 39 35.0032 39C37.5493 39 39.9911 37.9886 41.7914 36.1882C43.5918 34.3879 44.6032 31.9461 44.6032 29.4V16.6C44.6032 14.0539 43.5918 11.6121 41.7914 9.81177C39.9911 8.01143 37.5493 7 35.0032 7Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                                                                                 
+                    </div>
+                    <div class="enviroment__card-title">Модуль ВКС:</div>
+                    <ul class="enviroment__list">
+                        <li>
+                            стабильные конференции на 100+ человек 
+                        </li>
+                        <li>
+                            сохранение записей звонков 
+                        </li>
+                        <li>
+                            разделение на комнаты
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        <button class="enviroment__btn btn">Подключиться к Odin</button>
+        </div>
+    </section>
+    <section class="members container">
+        <h2 class="members__title title mb-title">Предоставляйте больше возможностей каждому участнику обучения</h2>
+        <h3 class="members__subtitle">На одной платформе взаимодействуют преподаватели, учащиеся, кураторы и администраторы. 
+            Вот как мы помогаем им учиться, работать и взаимодействовать друг с другом:
+        </h3>
+        <div class="members__cards">
+            <div class="members__card card">
+                <div class="members__photo photo">
+                    <div class="photo__image"></div>
+                    <div class="photo__ellipse"></div>
+                </div>
+                <div class="members__card-label badge">
+                    Преподаватели
+                </div>
+                <div class="members__card-text">
+                    Cоздание заданий разных форматов, автопроверка тестов, отслеживание прогресса учащихся
+                </div>
+            </div>
+            <div class="members__card card">
+                <div class="members__photo photo">
+                    <div class="photo__image"></div>
+                    <div class="photo__ellipse"></div>
+                </div>
+                <div class="members__card-label badge">
+                    Студенты
+                </div>
+                <div class="members__card-text">
+                    Персонализированный трек обучения, учеба с ПК и мобильного, интересные учебные материалы, подробная обратная связь
+                </div>
+            </div>
+            <div class="members__card card">
+                <div class="members__photo photo">
+                    <div class="photo__image"></div>
+                    <div class="photo__ellipse"></div>
+                </div>
+                <div class="members__card-label badge">
+                    Администраторы
+                </div>
+                <div class="members__card-text">
+                    Понятные панели отчетности и аналитики, постоянный контакт с участниками обучения, возможность вовремя отвечать на вопросы и отрабатывать возражения
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="profit container">
+        <h2 class="profit__title title mb-title">
+            Как мы помогаем увеличивать доходность
+        </h2>
+        <h3 class="profit__subtitle">
+            Согласно нашим расчетам, даже небольшое увеличение доходимости с помощью LMS Odin позволит полностью окупить ее использование и при этом увеличить доход от обучения
+        </h3>
+        <div class="profit__equation equation card mb-title">
+            <div class="equation__member">
+                <div class="equation__number">30 000 руб.</div>
+                <div class="equation__description">средний чек для одного студента <span class="text-primary">за трехмесячный курс</span></div>
+            </div>
+            <span class="equation__operator">x</span>
+            <div class="equation__member">
+                <div class="equation__number">100 студентов</div>
+                <div class="equation__description">среднее количество обучающихся</span></div>
+            </div>
+            <span class="equation__operator">=</span>
+            <div class="equation__member">
+                <div class="equation__number">3 млн руб.</div>
+                <div class="equation__description">ожидаемая выручка</span></div>
+            </div>
+        </div>
+        <div class="profit__details">
+            <div class="profit__plots plots">
+                <div class="plots__title">Сравнение платформ</div>
+                <div class="plots__content">
+                    <div class="plots__element">
+                        <div class="plots__plot">
+                            <div class="plots__column">
+                                <div class="plots__column-label">72%</div>
+                                <div class="plots__column-content plots__column-content bg-primary"></div>
+                            </div>
+                            <div class="plots__column">
+                                <div class="plots__column-label">59%</div>
+                                <div class="plots__column-content plots__column-content--min"></div>
+                            </div>
+                        </div>
+                        <div class="plots__plot-label">Доходимость</div>
+                    </div>
+                    <div class="plots__element">
+                        <div class="plots__plot">
+                            <div class="plots__column">
+                                <div class="plots__column-label">2.58</div>
+                                <div class="plots__column-content plots__column-content bg-primary"></div>
+                            </div>
+                            <div class="plots__column">
+                                <div class="plots__column-label">2.385</div>
+                                <div class="plots__column-content plots__column-content--middle"></div>
+                            </div>
+                        </div>
+                        <div class="plots__plot-label">Выручка млн руб.</div>
+                    </div>
+                    <div class="plots__element">
+                        <div class="plots__plot">
+                            <div class="plots__column">
+                                <div class="plots__column-label">28</div>
+                                <div class="plots__column-content plots__column-content"></div>
+                            </div>
+                            <div class="plots__column">
+                                <div class="plots__column-label">41</div>
+                                <div class="plots__column-content plots__column-content--small bg-primary"></div>
+                            </div>
+                        </div>
+                        <div class="plots__plot-label">Студенты (отчисления)</div>
+                    </div>
+                </div>
+                <div class="plots__history">
+                    <div class="plots__history-element">
+                        <div class="plots__history-color bg-primary"></div>
+                        <div class="plots__history-label">LMS Odin</div>
+                    </div>
+                    <div class="plots__history-element">
+                        <div class="plots__history-color"></div>
+                        <div class="plots__history-label">Другая LMS</div>
+                    </div>
+                </div>
+            </div>
+            <div class="profit__card card">
+                <div class="profit__card-title text-primary">195 000 руб.</div>
+                <div class="profit__card-subtitle">выгода при использовании LMS Odin</div>
+                <hr class="profit__hr" />
+                <div class="profit__payment">21 000 руб.</div>
+                <div class="profit__payment-text">оплата за использование LMS Odin в течение трех месяцев</div>
+                <small class="profit__small"><b>Расчет согласно стандартному тарифу:</b> <br> 70р./активный пользователь + 2р./ГБ хранилища</small>
+                <div class="profit__conclusion">
+                    Таким образом, при использовании LMS Odin вы не только оптимизируете и упрощаете процесс обучения,  но и увеличиваете доходность ваших программ за счет повышения доходимости студентов до конца обучения.
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="state has-bg">
+        <div class="state__content container">
+            <h2 class="state__title title mb-title">Партнерство с государственными и бизнес-проектами</h2>
+            <div class="state__row">
+                <div class="state__text">
+                    <h3 class="state__subtitle subtitle">Odin — платформа для смешанного
+                        и дистанционного обучения
+                    </h3>
+                    <p class="state__details">
+                        С нами работают Томский государственный университет,
+                        проекты «Содействие занятости» и «Код будущего»и другие организации.
+                    </p>
+                </div>
+                <div class="state__logo">
+                    <img src="./img/state/sz.svg" alt="Логотип проекта «Содействие занятости»">
+                    <img src="./img/state/cf.svg" alt="Логотип проекта «Код будущего»">
+                    <img src="./img/state/tsu.svg" alt="Логотип образовательной организации «Томский государственный университет»">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="feedback container">
+        <h2 class="feedback__title title mb-title">Отзывы наших клиентов</h2>
+        <div class="feedback__cards">
+            <div class="feedback__card card">
+                <div class="feedback__card-header">
+                    <div class="feedback__image">
+                    </div>
+                    <div class="feedback__author">
+                        <div class="feedback__author-name">
+                            Белова Светлана Николаевна
+                        </div>
+                        <div class="feedback__author-details">
+                            Профессор кафедры педагогики и профессионального образования ФГБОУ ВО «Курский государственный университет»
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback__card-body">
+                    «Мы успешно используем системы LMS Odin и CRM Flow, которые упростили рабочие процессы и повысили эффективность обучения.
+                    <br>
+                    <br>Благодаря удобному интерфейсу и автоматизации процессов, наши сотрудники быстро освоили системы и стали использовать их ежедневно. Интеграция системы Flow ускорила взаимодействие с абитуриентами и улучшила продуктивность.
+                    <br>
+                    <br>Выражаем благодарность командам систем за эти инновационные решения. Можем уверенно рекомендовать системы Odin и Flow для повышения эффективности работы и улучшения внутренних процессов».
+                </div>
+            </div>
+            <div class="feedback__card card">
+                <div class="feedback__card-header">
+                    <div class="feedback__image">
+                    </div>
+                    <div class="feedback__author">
+                        <div class="feedback__author-name">
+                            Гасаев Андрей Леонидович
+                        </div>
+                        <div class="feedback__author-details">
+                            Директор Южного Института Кадрового Обеспечения
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback__card-body">
+                    «С LMS Odin удобно проводить любые виды образовательных активностей.  Структура, собственные звонки и другие возможности  системы позволили  нам отказаться от использования дополнительных сервисов, все на одной  платформе, и это плюс. Наши студенты тоже довольны интерфейсом и  удобством обучения на Odin. Команда поддержки качественно и слажено  решает вопросы при их возникновении. Желаю всем членам команды Odin  успеха и множество идей для дальнейшего развития продукта!».
+                </div>
+            </div>
+            <div class="feedback__card card">
+                <div class="feedback__card-header">
+                    <div class="feedback__image">
+                    </div>
+                    <div class="feedback__author">
+                        <div class="feedback__author-name">
+                            Белова Светлана Николаевна
+                        </div>
+                        <div class="feedback__author-details">
+                            Профессор кафедры педагогики и профессионального образования ФГБОУ ВО «Курский государственный университет»
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback__card-body">
+                    «Мы успешно используем системы LMS Odin и CRM Flow, которые упростили рабочие процессы и повысили эффективность обучения.
+                    <br>
+                    <br>Благодаря удобному интерфейсу и автоматизации процессов, наши сотрудники быстро освоили системы и стали использовать их ежедневно. Интеграция системы Flow ускорила взаимодействие с абитуриентами и улучшила продуктивность.
+                    <br>
+                    <br>Выражаем благодарность командам систем за эти инновационные решения. Можем уверенно рекомендовать системы Odin и Flow для повышения эффективности работы и улучшения внутренних процессов».
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="flow has-bg">
+        <div class="flow__container container">
+            <h2 class="flow__title title mb-title">
+                Упрощаем рутину поступления и обучения
+            </h2>
+            <div class="flow__row">
+                <div class="flow__column">
+                    <p class="flow__text">
+                        <b>Odin помогает организовать процесс обучения, 
+                        а система Flow автоматизирует процесс документооборота от зачисления до завершения обучения студентов.</b>
+                        <br>
+                        <br>Абитуриенты могут загружать документы из любой точки мира благодаря удобному Личному кабинету Flow  и получать быструю обратную связь по зачислению. Автоматизация процессов документооборота  снижает затраты ресурсов, риск ошибок вследствие «человеческого фактора» и риск потери потенциального студента.
+                        <br>
+                        <br>Flow бесшовно интегрируется с платформой Odin, поэтому использование обеих систем несет максимальную продуктивность, удобство и покрытие большинства бизнес-процессов организации обучения.
+                    </p>
+                    <a href="https://www.flow-crm.study/" target="_blank" rel="noopener noreferrer" class="flow__btn btn">
+                        Узнать подробнее о Flow
+                    </a>
+                </div>
+                <div class="flow__image"></div>
+            </div>
+        </div>
+    </section>
+    <section class="security container">
+        <h2 class="security__title title mb-title">Ваши данные под защитой</h2>
+        <h3 class="security__subtitle subtitle">
+            Odin работает с собственным файловым хранилищем
+            и видеохостингом (плеером) с защитой от несанкционированного доступа
+            к материалам. Вся информация надежно защищена особым шифрованием.
+        </h3>
+        <div class="security__image"></div>
+    </section>
+    <section class="tariff container">
+        <div class="tariff__column">
+            <h2 class="tariff__title title mb-title">Гибкая система тарификации</h2>
+            <h3 class="tariff__subtitle">Вы платите только за количество активных пользователей и объем используемых ресурсов.</h3>
+            <p class="tariff__text">Стандартный тариф может быть уменьшен при определенных количественных показателях. Оставьте заявку, и мы рассчитаем индивидуальный тариф под задачи вашей организации.</p>
+            <a href="https://www.flow-crm.study/" target="_blank" rel="noopener noreferrer" class="tariff__btn btn">
+                Узнать подробнее о Flow
+            </a>
+        </div>
+        <div class="tariff__image"></div>
+    </section>
+    <section class="faq container">
+        <h2 class="faq__title title mb-title">
+            FAQ
+        </h2>
+        <div class="faq__accordeon accordeon">
+            <div class="accordeon__element">
+                <div class="accordeon__label">
+                    <div class="accordeon__label-text">
+                        Как подключиться к Odin?
+                    </div>
+                    <div class="accordeon__icon">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="accordeon__box">
+                    <div class="accordeon__content">
+                        Заполните форму обратной связи ниже. Наш менеджер свяжется с вами, поможет подобрать тариф под ваши задачи и познакомит с платформой. Заведение 
+                        в систему образовательных программ и наполнение контентом занимает максимально короткое время.
+                    </div>
+                </div>
+            </div>
+            <div class="accordeon__element">
+                <div class="accordeon__label">
+                    <div class="accordeon__label-text">
+                        На каких устройствах можно работать с платформой?
+                    </div>
+                    <div class="accordeon__icon">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="accordeon__box">
+                    <div class="accordeon__content">
+                        Обучаться можно с компьютера, планшета или телефона, как вам удобно. Также есть мобильное приложение.
+                    </div>
+                </div>
+            </div>
+            <div class="accordeon__element">
+                <div class="accordeon__label">
+                    <div class="accordeon__label-text">
+                        Сильно ли Odin отличается от университета?
+                    </div>
+                    <div class="accordeon__icon">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="accordeon__box">
+                    <div class="accordeon__content">
+                        Odin создан с учетом потребностей российских образовательных организаций и хорошо подстраивается под организационную структуру вузов, организаций ДПО и колледжей. Есть и групповые занятия (лекции и практика), и индивидуальная коммуникация. Во внутренних чатах преподаватели и студенты могут напрямую общаться, задавать вопросы, отправлять и получать обратную связь. Отдельные программы проходят в гибридном формате — онлайн-уроки 
+                        и практические занятия в образовательной организации.
+                    </div>
+                </div>
+            </div>
+            <div class="accordeon__element">
+                <div class="accordeon__label">
+                    <div class="accordeon__label-text">
+                        Юридические лица и ИП могут стать клиентами Odin?
+                    </div>
+                    <div class="accordeon__icon">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="accordeon__box">
+                    <div class="accordeon__content">
+                        Да. Нашими клиентами могут быть не только образовательные организации, но и юридические и физические лица, которые предоставляют услуги в сфере образования или иные услуги. Например, проведение экзаменов по независимой оценке квалификаций.
+                    </div>
+                </div>
+            </div>
+            <div class="accordeon__element">
+                <div class="accordeon__label">
+                    <div class="accordeon__label-text">
+                        Нужно ли отдельно оплачивать серверы для работы с платформой?
+                    </div>
+                    <div class="accordeon__icon">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="accordeon__box">
+                    <div class="accordeon__content">
+                        Не нужно закупать физические серверы и заниматься их обслуживанием, команда Odin берет это на себя.
+                    </div>
+                </div>
+            </div>
+            <div class="accordeon__element">
+                <div class="accordeon__label">
+                    <div class="accordeon__label-text">
+                        Как можно анализировать эффективность обучения на платформе?
+                    </div>
+                    <div class="accordeon__icon">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="accordeon__box">
+                    <div class="accordeon__content">
+                        Мы обеспечиваем постоянный контакт со студентами и контроль их успеваемости: аналитика, ВКС, чаты и рейтинги материалов помогают отслеживать удовлетворенность студентов, вовремя отвечать на вопросы, своевременно получать обратную связь.
+                    </div>
+                </div>
+            </div>
+            <div class="accordeon__element">
+                <div class="accordeon__label">
+                    <div class="accordeon__label-text">
+                        Как вы поможете увеличить доходимость студентов до конца обучения?
+                    </div>
+                    <div class="accordeon__icon">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="accordeon__box">
+                    <div class="accordeon__content">
+                        Простой и интуитивный интерфейс платформы снижает количество барьеров на пути студента, а функционал расписания и системы напоминаний помогает студентам не пропускать важные учебные события.  Также вы сможете собирать обратную связь от студентов, 24/7 отслеживать их прогресс и оперативно решать проблемы, если кто-то «забуксовал».
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="connect has-bg">
+        <div class="connect__content container">
+            <h2 class="connect__title title mb-title">
+                Подключитесь к Odin
+            </h2>
+            <h3 class="connect__subtitle subtitle">Заполните форму обратной связи</h3>
+            <p class="connect__offer">
+                С вами свяжется наш менеджер, уточнит
+                все детали и продемонстрирует платформу
+            </p>
+            <button class="connect__btn btn" id="chose-role">Начать</button>
+        </div>
+        <div class="connect__content connect__content--role container" style="display: none;">
+            <h2 class="connect__title title mb-title">
+                Получите демо-доступ
+            </h2>
+            <h3 class="connect__subtitle connect__subtitle--role subtitle">Выберите вашу роль</h3>
+            <select class="connect__select ui-select" name="role" id="role-select">
+                <option data-placeholder="true"></option>
+                <option value="org">Сотрудник организации</option>
+                <option value="student">Студент</option>
+            </select>
+            <form class="connect__form container" style="display: none;">
+                <input placeholder="Ваше имя" name="name" type="text" class="ui-input">
+            </form>
+            <button class="connect__btn btn" id="start">Начать</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <img src="./img/odin-logo-white.svg" class="footer__logo" alt="Odin LMS logo">
+        <hr class="footer__horisontal-line">
+        <div class="footer__contacts">
+            <div class="footer__links">
+                <div class="footer__assignee">
+                    Наш представитель: Юлия Суляева
+                </div>
+                <div class="footer__email">
+                    <span>Email:</span> <a href="mailto:hello@smile-tech.study" class="footer__link" target="_blank" rel="noopener noreferrer">hello@smile-tech.study</a>
+                </div>
+                <div class="footer__telegram">
+                    <span>Telegram:</span> <a href="https://t.me/usylaeva" class="footer__link" target="_blank" rel="noopener noreferrer">@usylaeva</a>
+                </div>
+            </div>
+            <div class="footer__copyright">
+                © 2024 ООО «Лига Спорта»
+            </div>
+        </div>
+    </footer>
+    <div class="noise"></div>
+    <script src="./script.js"></script>
+</body>
+</html>
