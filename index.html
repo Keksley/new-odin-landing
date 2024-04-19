@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/slim-select@latest/dist/slimselect.min.js"></script>
     <link href="https://unpkg.com/slim-select@latest/dist/slimselect.css" rel="stylesheet"></link>
     <link rel="stylesheet" href="./style.css">
     <title>LMS Odin</title>
@@ -15,7 +14,7 @@
                 <img src="./img/odin-logo.svg" alt="Odin logo">
             </a>
             <div class="header__controls">
-                <button class="header__add-organisation btn btn--white">Подключить организацию</button>
+                <button class="header__add-organisation btn btn--white" connect>Подключить организацию</button>
                 <a class="header__login link" target="_blank" rel="noopener noreferrer" href="https://odin.study">Войти в систему</a>
                 <select class="header__lang select select--lang" name="lang" id="lang">
                     <option value="ru">Ru</option>
@@ -658,6 +657,10 @@
             </select>
             <form class="connect__form container" style="display: none;">
                 <input placeholder="Ваше имя" name="name" type="text" class="ui-input">
+                <input id="phone" placeholder="+7 (___) ___ - __ - __" name="phone" type="text" class="ui-input">
+                <input id="email" placeholder="Ваш Email" name="email" type="email" class="ui-input">
+                <input placeholder="Ваша организация" name="organizationName" type="text" class="ui-input">
+                <textarea placeholder="Подробнее о вашей заявке на подключение вуза к Odin" name="comment" type="text" class="ui-input"></textarea>
             </form>
             <button class="connect__btn btn" id="start">Начать</button>
         </div>
@@ -684,6 +687,8 @@
         </div>
     </footer>
     <div class="noise"></div>
+    <script src="https://unpkg.com/slim-select@latest/dist/slimselect.min.js"></script>
+    <script src="./inputmask.min.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>

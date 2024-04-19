@@ -991,6 +991,7 @@ button {
 }
 
 .ui-input {
+  resize: vertical;
   padding: size(13) size(20);
   border-radius: size(10);
   border: 1px solid #ffffff;
@@ -1000,7 +1001,7 @@ button {
   outline: none;
   min-height: 50px;
   font-size: size(18);
-  
+  margin-bottom: size(20);
 
   &:focus {
     box-shadow: 0 0 5px var(--ss-focus-color);
@@ -1010,6 +1011,10 @@ button {
     border: 1px solid #FF0000;
     background-color: #FFE5E5;
   }
+}
+
+textarea.ui-input {
+  min-height: size(101);
 }
 
 //Helpers

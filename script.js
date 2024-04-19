@@ -49,9 +49,10 @@ document.getElementById('start').addEventListener('click', () => {
       isShowForm = true;
       document.querySelector('.connect__form').style.display = 'flex';
     }
-
   }
-})
+});
+var im = new Inputmask("+7 (999) 999 - 99 - 99");
+im.mask(document.querySelector('#phone'));
 
 document.querySelectorAll('.accordeon__label').forEach(el => {
   el.addEventListener('click', () => handleAccordeonClick(el))
@@ -65,3 +66,12 @@ function handleAccordeonClick(el) {
       content.style.maxHeight = 0;
   }
 }
+
+document.querySelectorAll('[connect]').forEach(el => {
+  el.addEventListener('click', () => {
+    document.querySelector('.connect').scrollIntoView({
+      behavior:'smooth',
+      block: 'start',
+    });
+  })
+})
