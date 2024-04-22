@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap');
 
 $text-body: #121212;
 $header-height: 4.5rem;
@@ -1030,4 +1031,119 @@ textarea.ui-input {
 }
 .mb-title {
   margin-bottom: size(40);
+}
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__container {
+  background-color: #fff;
+  padding: size(15);
+  max-width: size(536);
+  max-height: 100vh;
+  border-radius: size(20);
+  overflow-y: auto;
+  box-sizing: border-box;
+
+  &--video {
+    max-width: initial;
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+  }
+}
+
+.modal__header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.modal__title {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: size(25);
+  line-height: size(31);
+  text-align: center;
+  margin-bottom: size(20);
+}
+
+.modal__close {
+  background: transparent;
+  border: 0;
+  svg {
+    pointer-events: none;
+  }
+}
+
+.modal__content {
+  padding-top: size(8);
+  padding-right: size(25);
+  padding-left: size(25);
+  padding-bottom: size(25);
+  line-height: 1.5;
+  color: rgba(0,0,0,.8);
+  p {
+    text-align: center;
+    margin: 0;
+  }
+}
+
+@keyframes mmfadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+@keyframes mmfadeOut {
+    from { opacity: 1; }
+      to { opacity: 0; }
+}
+
+@keyframes mmslideIn {
+  from { transform: translateY(15%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes mmslideOut {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10%); }
+}
+
+.micromodal-slide {
+  display: none;
+}
+
+.micromodal-slide.is-open {
+  display: block;
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__overlay {
+  animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__container {
+  animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__overlay {
+  animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__container {
+  animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.micromodal-slide .modal__container,
+.micromodal-slide .modal__overlay {
+  will-change: transform;
 }

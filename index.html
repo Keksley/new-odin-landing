@@ -30,7 +30,7 @@
             <img src="./img/odin-lms.svg" alt="Odin LMS" class="hero__odin-lms">
             <p class="hero__subtitle subtitle">Привлекайте больше студентов, увеличивайте вовлеченность в обучение и повышайте прибыль</p>
             <div class="hero__offer">
-                <button class="hero__video play-btn">
+                <button class="hero__video play-btn" data-micromodal-trigger="video-modal">
                     <svg class="play-btn__image" width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="33" cy="33" r="32.5" stroke="#3052D8"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M32.9999 59.5609C47.6692 59.5609 59.5609 47.6692 59.5609 32.9999C59.5609 18.3307 47.6692 6.43896 32.9999 6.43896C18.3307 6.43896 6.43896 18.3307 6.43896 32.9999C6.43896 47.6692 18.3307 59.5609 32.9999 59.5609ZM25.7561 42.3682V23.632C25.7561 22.0823 27.4425 21.1214 28.7757 21.9115L44.5843 31.2795C45.8915 32.0542 45.8915 33.9461 44.5843 34.7207L28.7757 44.0888C27.4425 44.8788 25.7561 43.9179 25.7561 42.3682Z" fill="#3052D8"/>
@@ -39,7 +39,7 @@
                     <span class="play-btn__label">Смотреть видео о платформе</span>
                 </button>
                 <div class="hero__horisontal-line"></div>
-                <button class="hero__btn btn btn--white">Оставить заявку</button>
+                <button class="hero__btn btn btn--white" connect>Оставить заявку</button>
             </div>
             <div class="hero__counters">
                 <div class="hero__card card">
@@ -245,7 +245,7 @@
                     </ul>
                 </div>
             </div>
-        <button class="enviroment__btn btn">Подключиться к Odin</button>
+        <button class="enviroment__btn btn" connect>Подключиться к Odin</button>
         </div>
     </section>
     <section class="members container">
@@ -655,7 +655,7 @@
                 <option value="org">Сотрудник организации</option>
                 <option value="student">Студент</option>
             </select>
-            <form class="connect__form container" style="display: none;">
+            <form  action="@Url.Action("SendRequest")" class="connect__form container" id="organization-form" style="display: none;">
                 <input placeholder="Ваше имя" name="name" type="text" class="ui-input">
                 <input id="phone" placeholder="+7 (___) ___ - __ - __" name="phone" type="text" class="ui-input">
                 <input id="email" placeholder="Ваш Email" name="email" type="email" class="ui-input">
@@ -686,9 +686,86 @@
             </div>
         </div>
     </footer>
+    <div class="modal micromodal-slide" id="success" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="success-modal-title">
+                <header class="modal__header d-flex align-items-end w-100">
+                    <button class="modal__close" aria-label="Close modal" data-micromodal-close>
+                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_343_252)">
+                                <path d="M0.238281 15.6908L7.19303 8.73608L0.238281 1.78134L1.78354 0.236084L8.73828 7.19083L15.693 0.236084L17.2383 1.78134L10.2835 8.73608L17.2383 15.6908L15.693 17.2361L8.73828 10.2813L1.78354 17.2361L0.238281 15.6908Z" fill="#121212"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_343_252">
+                                    <rect width="17" height="17" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>                            
+                    </button>
+                </header>
+                <main class="modal__content" id="success-modal-content">
+                    <h2 class="modal__title" id="success-modal-title">
+                        Спасибо за ваш интерес к Odin
+                    </h2>
+                    <p>
+                        Ваша заявка успешно принята,
+                        и в ближайшее время с вами свяжется
+                        наш менеджер, чтобы обсудить все подробности
+                        и ответить на интересующие вас вопросы.
+                        <br><br>
+                        Благодарим вас за выбор нашей платформы!
+                    </p>
+                </main>
+            </div>
+        </div>
+    </div>
+    <div class="modal micromodal-slide" id="error" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="error-modal-title">
+                <header class="modal__header d-flex align-items-end w-100">
+                    <button class="modal__close" aria-label="Close modal" data-micromodal-close>
+                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_343_252)">
+                                <path d="M0.238281 15.6908L7.19303 8.73608L0.238281 1.78134L1.78354 0.236084L8.73828 7.19083L15.693 0.236084L17.2383 1.78134L10.2835 8.73608L17.2383 15.6908L15.693 17.2361L8.73828 10.2813L1.78354 17.2361L0.238281 15.6908Z" fill="#121212"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_343_252">
+                                    <rect width="17" height="17" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>                            
+                    </button>
+                </header>
+                <main class="modal__content" id="error-modal-content">
+                    <h2 class="modal__title" id="error-modal-title">
+                        Ошибка выполнения запроса
+                    </h2>
+                    <p>
+                        К сожалению, в данный момент у нас возникла
+                        ошибка при обработке вашего запроса.
+                        <br><br>
+                        Пожалуйста, попробуйте повторить позже.
+                    </p>
+                </main>
+            </div>
+        </div>
+    </div>
+    <div class="modal micromodal-slide" id="video-modal" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container modal__container--video" role="dialog" aria-modal="true">
+                <iframe title="@Localizer["Promo"]" id="player" width="1000" height="560"
+                    src="https://www.youtube.com/embed/jG9GIkWpe8c?enablejsapi=1" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowscriptaccess="always" allowfullscreen
+                >
+                </iframe>
+            </div>
+        </div>
+    </div>
     <div class="noise"></div>
     <script src="https://unpkg.com/slim-select@latest/dist/slimselect.min.js"></script>
     <script src="./inputmask.min.js"></script>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>

@@ -5,14 +5,14 @@ document.querySelectorAll('.select').forEach(el => new SlimSelect({
       hideSelected: true,
   }
 }));
-
-// document.querySelectorAll('.ui-select').forEach(el => new SlimSelect({
-//     select: el,
-//     settings: {
-//         showSearch: false,
-//         placeholderText: 'Ваша роль',
-//     }
-// }));
+MicroModal.init({
+  disableScroll: true,
+  onClose(modal) {
+    if (modal.id === 'video-modal') {
+      modal.querySelector('#player').contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
+    }
+  }
+});
 document.getElementById('chose-role').addEventListener('click', () => {
   document.querySelector('.connect__content--role').style.display = 'flex';
   document.querySelector('.connect__content:not(.connect__content--role)').style.display = 'none';
@@ -35,7 +35,9 @@ new SlimSelect({
       }
   }
 })
-document.getElementById('start').addEventListener('click', () => {
+const form = document.getElementById('organization-form');
+const startButton = document.getElementById('start')
+startButton.addEventListener('click', () => {
   if (!roleSelect.value) {
       document.querySelector('.connect__select ').classList.add('invalid');
       return;
@@ -44,7 +46,7 @@ document.getElementById('start').addEventListener('click', () => {
       window.location.href = 'https://xn----gtbmrddebg7h7a.xn--p1ai/';
   } else {
     if (isShowForm) {
-      // Тут отправляем заявку на сервак
+      form.dispatchEvent(new SubmitEvent('submit'));
     } else {
       isShowForm = true;
       document.querySelector('.connect__form').style.display = 'flex';
@@ -53,7 +55,6 @@ document.getElementById('start').addEventListener('click', () => {
 });
 var im = new Inputmask("+7 (999) 999 - 99 - 99");
 im.mask(document.querySelector('#phone'));
-
 document.querySelectorAll('.accordeon__label').forEach(el => {
   el.addEventListener('click', () => handleAccordeonClick(el))
 });
@@ -75,3 +76,37 @@ document.querySelectorAll('[connect]').forEach(el => {
     });
   })
 })
+
+const showSuccessModal = () => { 
+  MicroModal.show('success', {
+    disableScroll: true,
+  });
+};
+
+const showErrorModal = () => {
+  MicroModal.show('error', {
+    disableScroll: true,
+  });
+};
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const body = JSON.stringify([...new FormData(e.target).entries()].reduce((acc, [key, value]) => {
+    acc[key] = value;
+    return acc;
+  }, {}));
+  const url = e.target.action;
+  const method = 'POST';
+  fetch(url, {
+    method,
+    body,  
+  }).then(e => {
+    if (e.status === 200) {
+      showSuccessModal();
+    } else {
+      showErrorModal();
+    }
+  }).catch(showErrorModal);
+  
+});
