@@ -5,6 +5,7 @@ document.querySelectorAll('.select').forEach(el => new SlimSelect({
       hideSelected: true,
   }
 }));
+
 MicroModal.init({
   disableScroll: true,
   onClose(modal) {
@@ -29,6 +30,7 @@ new SlimSelect({
       afterChange() {
           document.querySelector('.connect__select').classList.remove('invalid');
           isShowForm = false;
+          startButton.disabled = false;
           if (roleSelect.value ==='student') {
             document.querySelector('.connect__form').style.display = 'none';
           }
@@ -36,7 +38,8 @@ new SlimSelect({
   }
 })
 const form = document.getElementById('organization-form');
-const startButton = document.getElementById('start')
+const startButton = document.getElementById('start');
+
 startButton.addEventListener('click', () => {
   if (!roleSelect.value) {
       document.querySelector('.connect__select ').classList.add('invalid');
@@ -50,6 +53,11 @@ startButton.addEventListener('click', () => {
     } else {
       isShowForm = true;
       document.querySelector('.connect__form').style.display = 'flex';
+      startButton.disabled = true;
+      document.getElementById('agreement').addEventListener('change', (e) => {
+        startButton.disabled = !e.target.checked;
+    })
+
     }
   }
 });
@@ -91,7 +99,7 @@ const showErrorModal = () => {
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-
+  startButton.disabled = true;
   const body = JSON.stringify([...new FormData(e.target).entries()].reduce((acc, [key, value]) => {
     acc[key] = value;
     return acc;
@@ -107,6 +115,8 @@ form.addEventListener('submit', (e) => {
     } else {
       showErrorModal();
     }
-  }).catch(showErrorModal);
+  }).catch(showErrorModal).finally(() => {
+    startButton.disabled = false;
+  })
   
 });
